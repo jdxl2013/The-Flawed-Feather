@@ -79,9 +79,7 @@ if (setup == true) {
 #region WHAT TO DO
 // could turn this into an enum or switch case if i want to change up anything/
 
-if (instance_exists(obj_item_menu)) {
-	cam_y_offset = -32;
-} else if (instance_exists(obj_documents_menu)) {
+if (instance_exists(obj_documents_menu)) {
 	cam_x_offset = array_length(global.inventory.docs) > 0 ? 12 : -12;
 } else if (instance_exists(obj_textbox)) {
 	if (obj_textbox.current_box_type == 2) {
@@ -171,7 +169,7 @@ if (global.debug.cam.is_free && global.debug.is_enabled) {
 } else if instance_exists(obj_camera_lock_block) && obj_camera_lock_block.has_player_collide {
 	cam_x_smooth = 15;
 	cam_y_smooth = 15;
-} else if instance_exists(obj_game_menu) && (instance_exists(obj_item_menu) || instance_exists(obj_documents_menu)) {
+} else if instance_exists(obj_game_menu) && (instance_exists(obj_documents_menu)) {
 	cam_x_smooth = 10;
 	cam_y_smooth = 10;
 } else if (cam_height_value != 0) {

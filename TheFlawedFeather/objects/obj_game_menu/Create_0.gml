@@ -51,9 +51,8 @@ box_spr_height = sprite_get_height(box_spr);
 
 sub_menus = array_create(0);
 // Menus
-array_push(sub_menus, "INVENTORY");
-array_push(sub_menus, "DOCUMENTS");
-//array_push(sub_menus, "SETTINGS");
+array_push(sub_menus, "TUTORIAL");
+array_push(sub_menus, "SETTINGS");
 array_push(sub_menus, "EXIT");
 //array_push(sub_menus,  "[DEBUG]");
 //if (global.debug.is_enabled) 

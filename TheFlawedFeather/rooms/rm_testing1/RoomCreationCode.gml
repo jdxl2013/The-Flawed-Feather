@@ -1,1 +1,1 @@
-cutscene_cg_run_id("bus_test");
+//cutscene_cg_run_id("bus_test");

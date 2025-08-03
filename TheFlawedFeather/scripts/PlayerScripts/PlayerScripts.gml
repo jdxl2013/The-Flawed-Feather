@@ -73,7 +73,6 @@ function warp_player(_target_room, _target_x, _target_y, _target_dir, _instant_w
 		// Clear Any Other Objects
 		if (instance_exists(obj_textbox)) instance_destroy(obj_textbox);
 		if (instance_exists(obj_game_menu)) instance_destroy(obj_game_menu);
-		if (instance_exists(obj_save_menu)) instance_destroy(obj_save_menu);
 		if (instance_exists(obj_exit_menu)) instance_destroy(obj_exit_menu);
 		#endregion
 		
@@ -127,7 +126,6 @@ function check_if_player_can_move() {
 	if (
 		instance_exists(obj_textbox) ||
 		instance_exists(obj_game_menu) ||
-		instance_exists(obj_save_menu) ||
 		instance_exists(obj_exit_menu) ||
 		(instance_exists(obj_warp_anim) && !obj_warp_anim.has_warped) ||
 		(global.debug.is_enabled && global.debug.cam.is_free)

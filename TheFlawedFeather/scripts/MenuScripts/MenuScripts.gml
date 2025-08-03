@@ -1,9 +1,3 @@
-function scr_save_menu() {
-	if (!instance_exists(obj_save_menu)) {
-		instance_create_depth(0, 0, -99999, obj_save_menu);
-	}
-}
-
 
 function scr_pause_menu() {
 	if (room != rm_init || room != rm_title_screen)

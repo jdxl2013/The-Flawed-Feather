@@ -1,1 +1,0 @@
-interaction_script_id = "demo_save_no_turning_back";

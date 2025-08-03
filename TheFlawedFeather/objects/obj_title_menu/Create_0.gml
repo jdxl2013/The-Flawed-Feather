@@ -43,21 +43,10 @@ box_spr_height = sprite_get_height(box_spr);
 #region Options/Choices
 
 option = array_create(0);
-// Main Title Screen
-//option[0] = "CONTINUE"; // have it change to say continue when you have more than 0 saves
-array_push(option, "PLAY"); //debate on changing to ADMIT like in medical.
-if (check_if_save_data_exists()) array_push(option, "CONTINUE");
-if (global.debug.is_enabled) array_push(option, "SETTINGS");
-if (global.debug.is_enabled) array_push(option, "ACHIEVEMENTS"); // not sure
-if (global.debug.is_enabled) array_push(option, "CREDITS");
+
+array_push(option, "PLAY"); 
 array_push(option, "LEAVE");
 
-// Settings
-//option[1, 0] = "CONTROLS";
-//option[1, 1] = "LANGUAGE";
-//option[1, 2] = "VIDEO";
-//option[1, 3] = "AUDIO";
-//option[1, 4] = "RETURN";
 
 option_number = array_length(option);
 option_pos = 0;
@@ -72,35 +61,19 @@ option_pos = 0;
 #region Flavor Text
 flavor_text_array = 
 [
-	"OUTPATIENT",
-	//"MALADE EN CONSULTATION EXTERNE",
-	//"PATIENTE EXTERNO",
-	//"WHERE THE HECK AM I???",
-	"DREAM 182–B",
-	//"Game where you you go you you you uh... me, no wait... what",
-	//"Costel, I don't think we need flavor text lol",
-	"Flavor text :>",
-	
-	// 4/24/2025
-	"November 2nd, 2023",
-	"Orange",
-	"Pushing Into The Kaleidoscope",
-	"Don't you want to be HAPPY?",
-	"i'm afraid",
-	"Rianne – Sheep",
-	"Costel – Dragon",
-	"Beckett – Horse",
+	"Red & Brown",
+	"Brown & Red",
+	"It's me...",
+	"Do you actually want this?",
+	"A conglomeration of everyone who loves you.", // Quote From My Mom
+	"Best Of Both Things", // Owl House Quote
 ];
 flavor_text = flavor_text_array[irandom(array_length(flavor_text_array) - 1)];
-if (!check_if_save_data_exists()) flavor_text = "";
 #endregion
 
 #region Version Data
-version_data = "OUTPATIENT v0.01.00";
-//version_data += "\njdxl2013 2023-2025";
-//GM_version; Might actively forget this existing unless needed for like standard practice or something lol
+version_data = "v0.01.00 (GMTK 2025 Version)";
 /*
-v0.00.00 - Showcase Demo (v20250502) (2025/05/02)
-v0.01.00 - Devlog 8 Update
+v0.01.00 - GMTK 2025 (August 3rd, 2025)
 */
 #endregion

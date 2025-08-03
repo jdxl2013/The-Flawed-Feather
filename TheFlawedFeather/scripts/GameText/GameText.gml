@@ -1294,100 +1294,6 @@ function scr_game_text(_text_id) {
 		
 		
 		
-		#region ITEM STUFFS
-		
-		#region Basic Stuff
-		case "item_get":
-			scr_text("You picked up <" + string(global.inventory.items[array_length(global.inventory.items) - 1].name) + ">."
-				);
-				//, "", 1, obj_player);
-			//scr_text("You picked up [Item Name Here, implement this lol].");
-			break;
-		case "item_no_use":
-			scr_text("This item has no use.");
-			break;
-		#endregion
-		
-		#region Test Item 1
-		case "use_test_item_1":
-			scr_text("You held the rock close to your eye, facinated by its intricate roughness and red hue, " +
-					 "pondering if there is anything that makes this rock special.",
-				"", 0, noone, 1); //more to this rock than what it gives on.");
-			scr_text(".....",
-				"Costel", 1, obj_player, 1);
-			scr_text("Nope, just a really red rock.",
-				"Costel", 1, obj_player, 1);
-			scr_text("...still kinda cool though.",
-				"Costel", 1, obj_player, 1);
-				//scr_option("<Observe The Rock>",		"use_test_item_1 (2)");
-			break;
-		case "use_test_item_1 (2)":
-			scr_text(".....",
-				"Costel", 1, obj_player);
-			scr_text("Nope, just a really red rock.",
-				"Costel", 1, obj_player);
-			scr_text("...still kinda cool though.",
-				"Costel", 1, obj_player);
-			break;
-		#endregion
-		
-		#region Pill Bottle
-		case "use_pill_bottle":
-			scr_text("You consumed the pills that were once inside the bottle. You are now left with an empty pill bottle.");
-			break;
-		case "use_pill_bottle_emptyA":
-			scr_text("Somehow, for some reason, you managed to regurgitate the pills and put them back inside the bottle. ...What?");
-			break;
-		case "use_pill_bottle_emptyB":
-			scr_text("For some reason, you decided to eat the pill bottle itself. ...Why would you do that?");
-			break;
-		#endregion
-		
-		#region File Doc
-		case "use_file_doc":
-			scr_text("Without looking, you pulled out a document from the folder.\n\n" +
-					 "A random document has been added to your DOCUMENTS.");
-			break;
-		#endregion
-		
-		#region Paper Doc
-		case "use_paper_doc":
-			scr_text("You added the random document to your DOCUMENTS collection.");
-			break;
-		#endregion
-		
-		#region Flute Text (Demo)
-		#region Flute Item
-		case "use_flute_text":
-			var _flute_text_rng = [
-			"A door has appeared nearby.",
-			"The flute has revealed a door.",
-			"The symphony brings listeners to your play. A passage is sent your way.",
-			"Piercing whistles flow through the air, your world becomes a bit more open to you.",
-			"A cacophony chars the wind - a door becomes agape."
-			];
-			
-			scr_text(_flute_text_rng[irandom(array_length(_flute_text_rng) - 1)]);
-			break;
-		#endregion
-		#region Flute Door
-		case "flute_door_locked":
-			var _flute_door_rng = [
-			"It's a lonely door frame.",
-			"...A door could be here, but there is none.",
-			"There is no door here...?",
-			"What is a door without it's frame?"
-			];
-			
-			scr_text(_flute_door_rng[irandom(array_length(_flute_door_rng) - 1)], "", 1, obj_interaction_follow);
-			break;
-		#endregion
-		#endregion
-		
-		#endregion
-		
-		
-		
 		#region *** DEMO TEXTS ***
 		
 		#region SAVE MENU FLAVOR STUFFS
@@ -1827,16 +1733,7 @@ function scr_game_text(_text_id) {
 		#region DEFAULT TEXT
 		// Used incase it doesn't point to anything.
 		default:
-			if (drt_game_text(_text_id) == false) {
-				scr_text("***********************************\n\n" +
-						 "   !!! An error has occured. !!!   \n\n" +
-						 "***********************************");
-				scr_text("ISSUE: NULL OR INVALID ID POINTER\n" +
-						 "  *  If you are seeing this, then something went wrong or this textbox wasn't set up properly.\n" +
-						 ":/");
-				scr_text("  *  If you are not a dev, please report this bug to a dev.");
-				scr_text("  *  If you are a dev, please report this bug to yourself.");
-			}
+			scr_text("! Invalid Textbox ID !");
 		#endregion
 	}
 	

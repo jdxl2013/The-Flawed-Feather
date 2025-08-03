@@ -149,20 +149,8 @@ function save_room() {
 	#region Save Room Data
 	switch (room) {
 		case (rm_testing1): global.room_data.tester_1 = _room_struct; break;
-		case (rm_testing2): global.room_data.tester_2 = _room_struct; break
+		case (rm_testing2): global.room_data.tester_2 = _room_struct; break;
 		
-		case (rm_demo_busstop): global.room_data.demo_busstop = _room_struct; break;
-		case (rm_demo_mainroad): global.room_data.demo_mainroad = _room_struct; break;
-		case (rm_demo_cafehere): global.room_data.demo_cafehere = _room_struct; break;
-		case (rm_demo_road2): global.room_data.demo_road2 = _room_struct; break;
-		case (rm_demo_alleyway): global.room_data.demo_alleyway = _room_struct; break;
-		case (rm_demo_housinghall): global.room_data.demo_housinghall = _room_struct; break;
-		case (rm_demo_room209): global.room_data.demo_room209 = _room_struct; break;
-		case (rm_demo_housingroof): global.room_data.demo_housingroof = _room_struct; break;
-		case (rm_demo_schoolgate): global.room_data.demo_schoolgate = _room_struct; break;
-		case (rm_demo_school1): global.room_data.demo_school1 = _room_struct; break;
-		case (rm_demo_school2): global.room_data.demo_school2 = _room_struct; break;
-		case (rm_demo_schoolfield): global.room_data.demo_schoolfield = _room_struct; break;
 		default: exit;
 	}
 	#endregion
@@ -176,18 +164,6 @@ function load_room() {
 		case (rm_testing1): _room_struct = global.room_data.tester_1; break;
 		case (rm_testing2): _room_struct = global.room_data.tester_2; break;
 		
-		case (rm_demo_busstop): _room_struct = global.room_data.demo_busstop; break;
-		case (rm_demo_mainroad): _room_struct = global.room_data.demo_mainroad; break;
-		case (rm_demo_cafehere): _room_struct = global.room_data.demo_cafehere; break;
-		case (rm_demo_road2): _room_struct = global.room_data.demo_road2; break;
-		case (rm_demo_alleyway): _room_struct = global.room_data.demo_alleyway; break;
-		case (rm_demo_housinghall): _room_struct = global.room_data.demo_housinghall; break;
-		case (rm_demo_room209): _room_struct = global.room_data.demo_room209; break;
-		case (rm_demo_housingroof): _room_struct = global.room_data.demo_housingroof; break;
-		case (rm_demo_schoolgate): _room_struct = global.room_data.demo_schoolgate; break;
-		case (rm_demo_school1): _room_struct = global.room_data.demo_school1; break;
-		case (rm_demo_school2): _room_struct = global.room_data.demo_school2; break;
-		case (rm_demo_schoolfield): _room_struct = global.room_data.demo_schoolfield; break;
 		default: exit;
 	}
 	//show_debug_message("found room data? " + string(is_struct(_room_struct)));

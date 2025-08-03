@@ -12,9 +12,7 @@ if (!instance_exists(obj_exit_menu)) || (obj_item_manager.help_me_anim != -1) {
 if (
 	!instance_exists(obj_textbox) &&
 	!instance_exists(obj_exit_menu) &&
-	!instance_exists(obj_item_menu) &&
-	!instance_exists(obj_documents_menu) &&
-	!instance_exists(obj_save_menu)
+	!instance_exists(obj_documents_menu)
 ) {
 	controls_locked = false;
 } else {
@@ -55,17 +53,9 @@ if (accept_key) {
 	var _current_option = option[option_pos];
 	
 	switch (_current_option) {
-		#region INVENTORY
-		case "INVENTORY":
-			if (!instance_exists(obj_item_menu)) {
-				help_me_anim = 4;
-				instance_create_depth(0, 0, depth - 1, obj_item_menu);
-			}
-		break;
-		#endregion
 				
 		#region DOCUMENTS
-		case "DOCUMENTS":
+		case "TUTORIAL":
 			if (!instance_exists(obj_documents_menu)) {
 				help_me_anim = 4;
 				instance_create_depth(0, 0, depth - 1, obj_documents_menu);
@@ -101,18 +91,6 @@ if (accept_key) {
 		break;
 		#endregion
 		
-		#region SAVE MENU
-		case "SAVE GAME":
-			/*
-			This will not be possible in the pause menu, this is here for Debug purposes.
-			Saves will be given at certain save points, spawning the obj on interaction.
-			*/
-			if (!instance_exists(obj_save_menu)) {
-				help_me_anim = 4;
-				instance_create_depth(0, 0, depth - 1, obj_save_menu);
-			}
-		break;
-		#endregion
 		
 		default: // Do Nothing, this is here incase of a crash.
 	}

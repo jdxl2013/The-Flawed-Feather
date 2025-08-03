@@ -13,8 +13,8 @@ if (interaction_is_available == true) {
 	//if (_num == 1) {
 	
 	can_interact = false;
-	if (global.debug.cam.can_move) {
-		if (collision_point(obj_camera.x, obj_camera.y, self, false, false)) {
+	if (instance_exists(obj_mouse)) {
+		if (collision_point(obj_mouse.x, obj_mouse.y, self, false, false)) {
 			if (!instance_exists(obj_warp_anim) && !pickup_anim) {
 				can_interact = true;
 			}
@@ -90,24 +90,6 @@ if (interaction_is_available == true) {
 					break;
 					#endregion
 				
-					#region PICK UPABLE OBJECT
-					case "item":
-						setup_interaction_follow(self);
-						
-						item_add(item);
-						create_textbox("item_get");
-						pickup_anim = true;
-					break;
-					#endregion
-				
-					#region SAVE POINT
-					case "save":
-						if (!instance_exists(obj_save_menu)) {
-							instance_create_depth(0, 0, 99999, obj_save_menu);
-						}
-					break;
-					#endregion
-					
 					default: // Do Nothing
 				}
 			} 

@@ -22,33 +22,6 @@ if (controls_locked == false) {
 //option_number = array_length(option[menu_level]);
 option_number = array_length(global.inventory.docs);
 
-#region Order Documents List
-if (accept_key && array_length(global.inventory.docs) > 1) {
-	
-	scending_value++;
-	if (scending_value >= array_length(scending_option)) {
-		scending_value = 0;
-		order_value++;
-		if (order_value >= array_length(order_option)) order_value = 0;
-	}
-	
-	// SAVE ORDER VALUES
-	save_document_menu_settings(order_value, scending_value);
-	
-	//var _order_by = order_value == 0 ? name : time_created;
-	
-	if (scending_value == 0) { // Ascending
-		array_sort(global.inventory.docs, function(a, b) {
-			return documents_order(a, b, order_value);
-		});
-	} else { // Descending
-		array_sort(global.inventory.docs, function(a, b) {
-			return documents_order(b, a, order_value);
-		});
-	}
-}
-#endregion
-
 #region TEXTBOX DOCUMENT STUFFS
 if (help_me_anim == 0 && array_length(global.inventory.docs) > 0 && option_pos >= 0 && option_pos < array_length(global.inventory.docs)) {
 	//for (var i = 0; i < array_length(global.inventory.docs); i++) {

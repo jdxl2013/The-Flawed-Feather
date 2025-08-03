@@ -107,7 +107,7 @@ draw_sprite_ext(
 	1,
 	0, c_white, box_alpha);
 
-var _text = "<<WARNING>>\nALL UNSAVED DATA\nWILL BE LOST";
+var _text = "<<WARNING>>\nALL LEVEL PROGRESS\nWILL BE LOST";
 draw_set_halign(fa_center);
 draw_text_ext_color(
 	//_box_x + ((textbox_width + string_width(_text)) / 2) - string_width(_text) + anim_x_offset,

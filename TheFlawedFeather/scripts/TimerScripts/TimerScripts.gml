@@ -65,7 +65,7 @@ function handle_timers() {
 		
 		var e = array_get(global.timers, i);
 		
-		if (!instance_exists(obj_exit_menu) && !instance_exists(obj_save_menu) && !instance_exists(obj_title_menu)) {
+		if (!instance_exists(obj_exit_menu) && !instance_exists(obj_title_menu)) {
 			if (e.timer <= 0) {
 				var t = false;
 				t = timer_type_booleans(e.run_type);

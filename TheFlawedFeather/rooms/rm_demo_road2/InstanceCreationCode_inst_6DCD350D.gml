@@ -1,1 +1,0 @@
-interaction_is_available = false;

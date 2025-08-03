@@ -10,12 +10,12 @@ function reset_all_global_save_data() {
 
 function setup_global_inventory_data() {
 	global.inventory = {
-		items : array_create(0),
 		docs : array_create(0),
 	}
 	
-	// FOR DEMO
-	item_add(global.item_list.flute);
+	documents_add(global.documents_list.doc_controls);
+	documents_add(global.documents_list.doc_how_play);
+	documents_add(global.documents_list.doc_credits);
 }
 
 function setup_global_room_data() {
@@ -25,19 +25,7 @@ function setup_global_room_data() {
 		tester_1 : 0,
 		tester_2 : 1,
 		
-		// Demo Rooms
-		demo_busstop : 2,
-		demo_mainroad : 3,
-		demo_cafehere : 4,
-		demo_road2 : 5,
-		demo_alleyway : 6,
-		demo_housinghall : 7,
-		demo_room209 : 8,
-		demo_housingroof : 9,
-		demo_schoolgate : 10,
-		demo_school1 : 11,
-		demo_school2 : 12,
-		demo_schoolfield : 13,
+		
 	}
 }
 

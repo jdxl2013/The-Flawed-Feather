@@ -1,5 +1,5 @@
 if (is_starting_game && !instance_exists(obj_warp_anim)) {
-	if (logo_alpha >= 0.98) {
+	if (logo_alpha >= 0.1) {
 		start_new_game();
 		//obj_camera.setup = true;
 	}
@@ -24,7 +24,6 @@ get_controls();
 
 if (
 	!instance_exists(obj_warp_anim) &&
-	!instance_exists(obj_save_menu) &&
 	!is_starting_game
 	) {
 	// option Select
@@ -61,31 +60,7 @@ if (accept_key) {
 		break;
 		#endregion
 		
-		#region CONTINUE (LOAD SAVE FILES)
-		case "CONTINUE":
-			if (!instance_exists(obj_save_menu)) {
-				instance_create_depth(0, 0, depth - 1, obj_save_menu);
-			}
-		break;
-		#endregion
 		
-		#region SETTINGS
-		case "SETTINGS":
-			// Not implemented yet, I wanna do this as a separate menu instead of being part of the title menu and whatnot.
-		break;
-		#endregion
-				
-		#region ACHIEVEMENTS? (not implemented)
-		case "ACHIEVEMENTS":
-			//////////
-		break;
-		#endregion
-				
-		#region CREDITS (not implemented)
-		case "CREDITS":
-			//////////
-		break;
-		#endregion
 				
 		#region QUIT
 		case "LEAVE":

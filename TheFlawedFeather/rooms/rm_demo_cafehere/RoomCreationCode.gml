@@ -1,1 +1,0 @@
-set_song(mus_yume);

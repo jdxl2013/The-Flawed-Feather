@@ -1,1 +1,0 @@
-interaction_script_id = "demo_first_save";

@@ -2,7 +2,7 @@
 get_controls();
 key_left = left_key; //keyboard_check(LEFT);
 key_right = right_key; //keyboard_check(RIGHT);
-key_run = cancel_key; //keyboard_check(CANCEL);
+key_run = running_key; //keyboard_check(CANCEL);
 
 if (room == rm_title_screen && instance_exists(obj_player)) {
 	//instance_destroy(obj_player);
