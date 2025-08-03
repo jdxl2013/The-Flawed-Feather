@@ -1,0 +1,1 @@
+visible = global.debug.is_enabled ? true : false;

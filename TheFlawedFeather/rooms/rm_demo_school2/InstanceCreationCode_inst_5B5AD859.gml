@@ -1,0 +1,1 @@
+if (global.flag[2]) instance_destroy();

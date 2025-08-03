@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"FLAGS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FLAGS",
+  "parent":{
+    "name":"_IMPORTANT",
+    "path":"folders/Scripts/_IMPORTANT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

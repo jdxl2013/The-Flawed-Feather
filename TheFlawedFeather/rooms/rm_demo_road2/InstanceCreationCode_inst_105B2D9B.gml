@@ -1,0 +1,6 @@
+command = "warp";
+
+target_room = rm_demo_housinghall;
+target_x = 682;
+target_y = 304;
+target_dir = -1;
