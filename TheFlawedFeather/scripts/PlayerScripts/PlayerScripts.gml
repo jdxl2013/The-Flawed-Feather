@@ -2,42 +2,48 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function handle_character(argument0) {
+	var _gender = global.player.char.gender;
+	// 0	M
+	// 1	F
+	char_eye_glow = spr_player_eyes;
+	
 	switch(argument0) {
-		case PLAYER_COSTEL1:
-			char_name = "Costel";
-			current_char_sheet = CostelA_Sheet;
-			char_eye_glow = CostelOverlay_Eyes_Sheet;
-			char_bandana = RianneOverlay_Bandana_Sheet;
-			char_bandana_alpha = 0;
+		case PLAYER_FULL:
+			if (_gender = 0) {
+				char_sheet_a = spr_player_m_full;
+				char_sheet_b = spr_player_m_full;
+			} else {
+				char_sheet_a = spr_player_f_full;
+				char_sheet_b = spr_player_f_full;
+			}
 		break;
-		case PLAYER_COSTEL2:
-			char_name = "Costel";
-			current_char_sheet = CostelB_Sheet;
-			char_eye_glow = CostelOverlay_Eyes_Sheet;
-			char_bandana_alpha = 0;
-			char_bandana = RianneOverlay_Bandana_Sheet;
+		case PLAYER_INTR:
+			char_sheet_a = spr_player_m_x;
+			char_sheet_b = spr_player_f_x;
 		break;
-		case PLAYER_RIANNE1:
-			char_name = "Rianne";
-			current_char_sheet = RianneCasual_Sheet;
-			char_eye_glow = RianneOverlay_Eyes_Sheet;
-			char_bandana = RianneOverlay_BandanaCasual_Sheet;
-			//char_bandana_alpha = 1;
+		case PLAYER_HALF:
+			if (_gender = 0) {
+				char_sheet_a = spr_player_m_right;
+				char_sheet_b = spr_player_m_left;
+			} else {
+				char_sheet_a = spr_player_f_right;
+				char_sheet_b = spr_player_f_left;
+			}
 		break;
-		case PLAYER_RIANNE2:
-			char_name = "Rianne";
-			current_char_sheet = RianneTense_Sheet;
-			char_eye_glow = RianneOverlay_Eyes_Sheet;
-			char_bandana = RianneOverlay_Bandana_Sheet;
-			//char_bandana_alpha = 1;
+		case PLAYER_NULL:
+			char_sheet_a = spr_player_null;
+			char_sheet_b = spr_player_null;
 		break;
-		case PLAYER_RIANNE3:
-			char_name = "Rianne";
-			current_char_sheet = RianneFulfilled_Sheet;
-			char_eye_glow = RianneOverlay_Eyes_Sheet;
-			char_bandana = RianneOverlay_Bandana_Sheet;
-			//char_bandana_alpha = 1;
-		break;
+	}
+	
+	var _main_side_dir = global.player.char.main_side_right;
+
+	if (_main_side_dir == 1) {
+		current_char_sheet = image_xscale == 1 ?
+			char_sheet_a : char_sheet_b;
+	} else {
+		current_char_sheet = image_xscale == -1 ?
+			char_sheet_a : char_sheet_b;
 	}
 }
 

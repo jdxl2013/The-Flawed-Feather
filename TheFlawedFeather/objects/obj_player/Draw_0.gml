@@ -47,27 +47,13 @@ switch (anim_state) {
 #endregion
 
 #region PLAYER DRAW
+
 draw_sprite_part_ext(current_char_sheet, 0,
 	floor(x_frame) * frame_size, y_frame * frame_size,
 	frame_size,	frame_size,
 	x - (x_offset * image_xscale), y - y_offset,
 	image_xscale, 1, char_brightness, 1);
 
-/*gpu_set_blendmode(bm_add);
-draw_sprite_part_ext(spr_costel_alphaTest, 0,
-	floor(x_frame) * frame_size, y_frame * frame_size,
-	frame_size,	frame_size,
-	x - (x_offset * image_xscale), y - y_offset,
-	image_xscale, 1, c_outp_orange, 1);
-gpu_set_blendmode(bm_normal);*/
-
-	// Kinda odd how applying the image xscale to the offset makes it work.
-	// Idk lol im not gonna bother, it works lol
-draw_sprite_part_ext(char_bandana, 0,
-	floor(x_frame) * frame_size, y_frame * frame_size,
-	frame_size,	frame_size,
-	x - (x_offset * image_xscale), y - y_offset,
-	image_xscale, 1, char_brightness, char_bandana_alpha);
 draw_sprite_part_ext(char_eye_glow, 0,
 	floor(x_frame) * frame_size, y_frame * frame_size,
 	frame_size,	frame_size,
@@ -95,11 +81,6 @@ draw_sprite_part_ext(current_char_sheet, 0,
 	frame_size,	frame_size,
 	x - (x_offset * image_xscale), (y - y_offset) + (frame_size * 2),
 	image_xscale, -1, char_brightness, char_reflection_alpha);
-draw_sprite_part_ext(char_bandana, 0,
-	floor(x_frame) * frame_size, y_frame * frame_size,
-	frame_size,	frame_size,
-	x - (x_offset * image_xscale), (y - y_offset) + (frame_size * 2),
-	image_xscale, -1, char_brightness, char_bandana_alpha * char_reflection_alpha);
 draw_sprite_part_ext(char_eye_glow, 0,
 	floor(x_frame) * frame_size, y_frame * frame_size,
 	frame_size,	frame_size,

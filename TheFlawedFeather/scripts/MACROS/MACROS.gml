@@ -32,11 +32,12 @@ good to know*/
 
 #region CHARACTERS
 
-#macro PLAYER_COSTEL1	0
-#macro PLAYER_COSTEL2	1
-#macro PLAYER_RIANNE1	2
-#macro PLAYER_RIANNE2	3
-#macro PLAYER_RIANNE3	4
+#macro PLAYER_FULL		0
+#macro PLAYER_INTR		1
+#macro PLAYER_HALF		2
+#macro PLAYER_NULL		3
+
+
 
 #endregion
 

@@ -32,8 +32,9 @@ function setup_global_room_data() {
 function setup_global_player_data() {
 	global.player = {
 		char : {
-			val : PLAYER_COSTEL1,
-			name : "Costel",
+			val : PLAYER_INTR,
+			gender : irandom(1),
+			main_side_right : irandom(1),
 		},
 		pos : {
 			room : 0,
@@ -46,6 +47,4 @@ function setup_global_player_data() {
 		can_move : true,
 		can_look : true,
 	}
-	
-	
 }

@@ -31,9 +31,11 @@ anim_run = 0.08;
 // Character Playing As
 char_name = "";
 current_char_sheet = 0;
+
+char_sheet_a = 0;
+char_sheet_b = 0;
+
 char_eye_glow = 0;
-char_bandana = 0;
-char_bandana_alpha = 0;
 char_var = global.player.char.val; //currently initialized in obj_saveload
 handle_character(char_var);
 char_eye_alpha = 1;
