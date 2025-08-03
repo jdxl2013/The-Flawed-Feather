@@ -43,11 +43,11 @@ good to know*/
 
 #region OTHER
 
-#macro c_outp_orange		$0068FF		// #FF6800
-#macro c_outp_icon			$10184B		// #4B1810
+#macro c_outp_orange		$2F28CC		// #CC282F
+#macro c_outp_icon			$4B47B2		// #B2474B
 
-#macro c_outp_lticon		$213196		// #963121
-#macro c_outp_altorange		$3149E1		// #E14931
+#macro c_outp_lticon		$5E5B99		// #995B5E
+#macro c_outp_altorange		$67667F		// #7F6667
 
 #macro FONT				fnt_outpatient_latin
 /*

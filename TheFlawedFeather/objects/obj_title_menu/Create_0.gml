@@ -63,10 +63,17 @@ flavor_text_array =
 [
 	"Red & Brown",
 	"Brown & Red",
-	"It's me...",
-	"Do you actually want this?",
-	"A conglomeration of everyone who loves you.", // Quote From My Mom
+	"“It's me....”",
+	"“Do you actually want this?”",
+	"“A conglomeration of everyone who loves you.”", // Quote From My Mom
 	"Best Of Both Things", // Owl House Quote
+	"Cardinal East & Cardinal West",
+	"Cardinal West & Cardinal East",
+	"GMTK 2025!",
+	"omg the time is NOT on my side for this game jam",
+	"DID ALL THE CODE WITHIN 13 HOURS",
+	"“Two-faced.”", // ...
+	"“You are always loved no matter what.”"
 ];
 flavor_text = flavor_text_array[irandom(array_length(flavor_text_array) - 1)];
 #endregion

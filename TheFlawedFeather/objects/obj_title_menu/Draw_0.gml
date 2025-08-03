@@ -118,7 +118,7 @@ for (var i = 0; i < option_number; i++) {
 			_box_y + _op_spacing + 1 - 0.5,
 			CAMERA_WIDTH / _box_spr_width,
 			(string_height(option[i]) + 2) / _box_spr_height,
-			0, $080C26, 1 * not_logo_alpha);
+			0, $00004C, 1 * not_logo_alpha);
 		draw_text_color(
 			_box_x + _text_x_offset,
 			_box_y + _op_spacing + 2,
