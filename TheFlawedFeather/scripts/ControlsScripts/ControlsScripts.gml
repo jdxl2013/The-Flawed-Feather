@@ -7,6 +7,7 @@ function get_controls() {
 	left_keyboard = vk_left;
 	right_keyboard = vk_right;
 	
+	
 	run_keyboard = vk_shift;
 	
 	// [ WASD KEYS + E ]
@@ -15,12 +16,14 @@ function get_controls() {
 	left_keyboard2 = ord("A");
 	right_keyboard2 = ord("D");
 	
+	
 	run_keyboard2 = vk_rshift;
 	
 	// Mouse & Escape
 	confirm_mouse = mb_left;
 	cancel_mouse = mb_right;
 	menu_mouse = vk_escape;
+	
 	#endregion
 	
 	#region HOLD INPUT

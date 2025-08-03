@@ -64,3 +64,23 @@ if popup_alpha > 0 {
 }
 
 #endregion
+
+#region Flaws
+if (marked_for_flaw) {
+	if (can_interact) {
+		flaw_rot = obj_mouse.to_angle;
+	} else {
+		if (flaw_rot < 360) flaw_rot++;
+		else flaw_rot = 0;
+	}
+	var _scale = ((sprite_width + sprite_height) / 2) / 32;
+	gpu_set_blendmode(bm_add);
+	draw_sprite_ext(
+		spr_mouse, 3,
+		x, y - (sprite_height / 2),
+		_scale, _scale,
+		flaw_rot, c_yellow, 1
+	);
+	gpu_set_blendmode(bm_normal);
+}
+#endregion

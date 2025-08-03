@@ -1,6 +1,20 @@
 
 get_controls();
 
+#region HANDLE FLAWS
+if (has_flaw == true) {
+	if (!has_setup_flaw) {
+		has_setup_flaw = true;
+	
+		if (array_length(possible_flaws) != 0) {
+			possible_flaws[irandom(array_length(possible_flaws))]();
+		}
+	
+	}
+}
+#endregion
+
+
 #region HANDLE INTERACTIONS
 
 if (interaction_is_available == true) {
@@ -13,26 +27,16 @@ if (interaction_is_available == true) {
 	//if (_num == 1) {
 	
 	can_interact = false;
-	if (instance_exists(obj_mouse)) {
-		if (collision_point(obj_mouse.x, obj_mouse.y, self, false, false)) {
-			if (!instance_exists(obj_warp_anim) && !pickup_anim) {
-				can_interact = true;
-			}
-		}
-	} else if (place_meeting(x, y, obj_player)) {
-	//(obj_player.x > bbox_left || obj_player.x > bbox_right) {	
+	if (
+		!instance_exists(obj_warp_anim) &&
+		!instance_exists(obj_textbox) &&
+		global.player.can_move
+	) {
 		if (
-			((obj_player.image_xscale > 0) && (obj_player.x < x + _facing_buffer)) ||
-			((obj_player.image_xscale < 0) && (obj_player.x > x - _facing_buffer))
-			// (place_meeting(x, y, obj_player)) && // figure out but this basically fixes it.
+			obj_mouse.hovering &&
+			collision_point(obj_mouse.x, obj_mouse.y, self, false, false)
 		) {
-			if (
-				global.player.can_move &&
-				!instance_exists(obj_warp_anim) &&
-				!pickup_anim
-			) {
-				can_interact = true;
-			}
+			can_interact = true;
 		}
 	}
 	
@@ -40,9 +44,11 @@ if (interaction_is_available == true) {
 	if (can_interact == true) {
 	
 		//if keyboard_check_pressed(CONFIRM) && !instance_exists(obj_textbox) {
-		if confirm_key_pressed && !instance_exists(obj_textbox) {
+		if confirm_key_pressed {
 			
 			scr_interact_functions(interaction_script_id);
+			
+			marked_for_flaw = marked_for_flaw ? false : true;
 			
 			// What to do on interaction.
 			if (command != 0) {
@@ -98,7 +104,8 @@ if (interaction_is_available == true) {
 		}
 	}
 
-	//ds_list_destroy(_list);
+} else {
+	can_interact = false;	
 }
 
 #endregion

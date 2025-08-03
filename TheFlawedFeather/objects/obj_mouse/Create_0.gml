@@ -2,6 +2,8 @@
 image_alpha = 1;
 depth = -99999;
 
+
+
 confirm_key = false;
 confirm_key_pressed = false;
 confirm_key_released = false;
@@ -13,6 +15,8 @@ x_to = x;
 y_to = y;
 
 hovering = false; // checks if the mouse is over a usable object.
+is_capable = false;
+
 coll_obj = obj_interaction; //noone;
 
 

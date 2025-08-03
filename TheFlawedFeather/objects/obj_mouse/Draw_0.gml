@@ -1,13 +1,14 @@
 
+var _both_capable_hover = is_capable && hovering;
 
-var _to_col		= hovering ? c_orange : c_dkgray;
-var _main_col	= hovering ? c_yellow : c_ltgray;
-var _to_img		= hovering ? 3 : 2;
-var _main_img	= hovering ? 1 : 0;
+var _to_col		= _both_capable_hover ? c_orange : c_dkgray;
+var _main_col	= _both_capable_hover ? c_yellow : c_ltgray;
+var _to_img		= _both_capable_hover ? 3 : 2;
+var _main_img	= _both_capable_hover ? 1 : 0;
 
 #region Towards Visual
 if (to_angle < 360) {
-	if (hovering) {
+	if (_both_capable_hover) {
 		to_angle += 0.5;
 	} else {
 		to_angle += 2;
@@ -21,6 +22,7 @@ if (to_angle < 360) {
 
 to_current_scale += calc_compare_divide(to_current_scale, to_scale, 5);
 
+gpu_set_blendmode(bm_add);
 draw_sprite_ext(
 	spr_mouse, _to_img,
 	x_to, y_to,
@@ -34,3 +36,4 @@ draw_sprite_ext(
 	1, 1,
 	0, _main_col, image_alpha
 );
+gpu_set_blendmode(bm_normal);

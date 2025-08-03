@@ -1,4 +1,14 @@
 
+#region Flawed Gimmick
+has_flaw = false;
+possible_flaws = array_create(0, function() {});
+
+has_setup_flaw = false;
+marked_for_flaw = false;
+has_found_flaw = false;
+
+flaw_rot = 0;
+#endregion
 
 #region INTERACTION ATTRIBUTES
 can_interact = false;
@@ -28,8 +38,7 @@ command = 0;
 	0	0		Does Nothing	--- (Useful for the custom code via scr_interaction_function.)
 	1	text	Textbox			create_textbox(text_id);
 	2	warp*	Warp			warp_player(target_room, target_x, target_y, target_dir, instant_warp, warp_script_ids);
-	3	item	Item Pick Up	item_add(item)
-	4	save	Save Point		(!needs implementation)
+	3	
 	
 	*	If you have a locked door or something that could be unlocked, use the textbox.
 */

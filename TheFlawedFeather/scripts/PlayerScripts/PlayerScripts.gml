@@ -51,11 +51,6 @@ function handle_character(argument0) {
 /// If size 2 or 3 array, then each ID runs on: [0] Anim Start, [1] Room Transition, [2] Anim End
 /// @description Warps the player to a different room or location.
 function warp_player(_target_room, _target_x, _target_y, _target_dir, _instant_warp = false, _script_ids = "") {
-	// Making this into a script so i can make it so this gets called within interactions aswell.
-	
-	//if (instance_exists(obj_game_menu) && obj_game_menu.help_me_anim != 2) {
-	//	obj_game_menu.help_me_anim = 2;
-	//}
 	
 	if (!instance_exists(obj_warp_anim)) {
 		// Gets called in the case that you want it to warp without a warp block.
@@ -105,6 +100,10 @@ function warp_player(_target_room, _target_x, _target_y, _target_dir, _instant_w
 			obj_camera.y = obj_player.y + obj_camera.cam_y_offset;
 			obj_camera.x_to = obj_camera.x;
 			obj_camera.y_to = obj_camera.y;
+			
+			// Set Mouse Position
+			obj_mouse.x_to = obj_player.x;
+			obj_mouse.y_to = obj_player.y;
 		}
 		#endregion
 		
