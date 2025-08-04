@@ -26,17 +26,6 @@ function scr_warp_functions(_id) {
 			break;
 		#endregion
 		
-		
-		#region
-		case "demo_creature_cutscene2":
-			// First one was on interaction with the school door.
-			if (!global.flag[2]) {
-				spawn_creature_cutscene(188, 256);
-				create_textbox("demo_creature_scene_b");
-			}
-			break;
-		#endregion
-		
 		default: // Do nothing.
 	}
 }

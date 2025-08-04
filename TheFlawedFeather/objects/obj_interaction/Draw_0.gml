@@ -73,11 +73,14 @@ if (marked_for_flaw) {
 		if (flaw_rot < 360) flaw_rot++;
 		else flaw_rot = 0;
 	}
-	var _scale = ((sprite_width + sprite_height) / 2) / 32;
+	
+	var _width = bbox_right - bbox_left;
+	var _height = bbox_bottom - bbox_top;
+	var _scale = ((_width + _height) / 2) / 32;
 	gpu_set_blendmode(bm_add);
 	draw_sprite_ext(
 		spr_mouse, 3,
-		x, y - (sprite_height / 2),
+		x, y - (_height / 2),
 		_scale, _scale,
 		flaw_rot, c_yellow, 1
 	);

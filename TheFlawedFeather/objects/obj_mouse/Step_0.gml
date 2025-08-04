@@ -48,11 +48,17 @@ if (hovering) {
 	if (coll_obj.can_interact) { // TOGGLE (Buttons And What Not)
 		is_capable = true;
 		
+		
+		var _width = coll_obj.bbox_right - coll_obj.bbox_left;
+		var _height = coll_obj.bbox_bottom - coll_obj.bbox_top;
+		
 		var _center_x = coll_obj.x;
-		var _center_y = coll_obj.y - (coll_obj.sprite_height / 2);
+		var _center_y = coll_obj.y - (_height / 2);
+		
 		x_to += calc_compare_divide(x_to, _center_x, 5);
 		y_to += calc_compare_divide(y_to, _center_y, 5);
-		to_scale = ((coll_obj.sprite_width + coll_obj.sprite_height) / 2) / 32;
+		
+		to_scale = ((_width + _height) / 2) / 32;
 	} else {
 		is_capable = false;
 		
@@ -63,3 +69,8 @@ if (hovering) {
 }
 #endregion
 
+// Offset From Camera
+x_offset = x - obj_camera.x;
+y_offset = y - obj_camera.y;
+x_to_offset = x_to - obj_camera.x;
+y_to_offset = y_to - obj_camera.y;

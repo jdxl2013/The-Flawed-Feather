@@ -1,5 +1,6 @@
 
 has_player_collide = false;
+adjust_with_follower_of_camera = true;
 
 follow = noone;
 x_target = x;

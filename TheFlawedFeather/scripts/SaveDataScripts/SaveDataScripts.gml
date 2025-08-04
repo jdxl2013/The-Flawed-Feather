@@ -42,7 +42,8 @@ function start_new_game() {
 		//		global.player.pos.y, 
 		//		global.player.pos.dir);
 	}
-	warp_player(rm_testing1, 504, 448, 0, false, "LOAD_GAME");
+	//warp_player(rm_testing1, 504, 448, 0, false, "LOAD_GAME");
+	warp_player(rm_tff_tutorial, 40, 128, 1, false, "LOAD_GAME");
 	//warp_player(rm_demo_busstop, 256, 368, 1, false, "LOAD_GAME");
 }
 

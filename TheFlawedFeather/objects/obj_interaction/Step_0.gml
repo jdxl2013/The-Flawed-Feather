@@ -40,15 +40,25 @@ if (interaction_is_available == true) {
 		}
 	}
 	
+	if (
+		obj_mouse.hovering &&
+		collision_point(obj_mouse.x, obj_mouse.y, self, false, false)
+	) {
+		if confirm_key_pressed {
+			marked_for_flaw = marked_for_flaw ? false : true;
+		}
+	}
+	
 	
 	if (can_interact == true) {
-	
+		
+		
+		
 		//if keyboard_check_pressed(CONFIRM) && !instance_exists(obj_textbox) {
-		if confirm_key_pressed {
+		if cancel_key_pressed {
 			
 			scr_interact_functions(interaction_script_id);
 			
-			marked_for_flaw = marked_for_flaw ? false : true;
 			
 			// What to do on interaction.
 			if (command != 0) {

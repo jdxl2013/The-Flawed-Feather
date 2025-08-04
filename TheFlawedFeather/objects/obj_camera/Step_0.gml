@@ -140,8 +140,13 @@ if (global.debug.is_enabled && global.debug.cam.is_free) {
 	if instance_exists(obj_camera_lock_block) {
 		with (instance_place(follow.x, follow.y, obj_camera_lock_block)) {
 			if (has_player_collide) {
-				obj_camera.x_to = (obj_camera.follow.x + obj_camera.cam_x_offset + x_goto) / 2;
-				obj_camera.y_to = (obj_camera.follow.y + obj_camera.cam_y_offset + obj_camera.cam_height_align + y_goto) / 2;
+				if (adjust_with_follower_of_camera) {
+					obj_camera.x_to = (obj_camera.follow.x + obj_camera.cam_x_offset + x_goto) / 2;
+					obj_camera.y_to = (obj_camera.follow.y + obj_camera.cam_y_offset + obj_camera.cam_height_align + y_goto) / 2;
+				} else {
+					obj_camera.x_to = obj_camera.cam_x_offset + x_goto;
+					obj_camera.y_to = obj_camera.cam_y_offset + obj_camera.cam_height_align + y_goto;
+				}
 			}
 		}
 	}

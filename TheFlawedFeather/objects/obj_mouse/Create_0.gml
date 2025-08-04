@@ -14,6 +14,11 @@ y = mouse_y;
 x_to = x;
 y_to = y;
 
+x_offset = 0;
+y_offset = 0;
+x_to_offset = 0;
+y_to_offset = 0;
+
 hovering = false; // checks if the mouse is over a usable object.
 is_capable = false;
 

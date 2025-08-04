@@ -108,8 +108,10 @@ function warp_player(_target_room, _target_x, _target_y, _target_dir, _instant_w
 			obj_camera.y_to = obj_camera.y;
 			
 			// Set Mouse Position
-			obj_mouse.x_to = obj_player.x;
-			obj_mouse.y_to = obj_player.y;
+			obj_mouse.x = obj_mouse.x_offset;
+			obj_mouse.y = obj_mouse.y_offset;
+			obj_mouse.x_to = obj_mouse.x_to_offset;
+			obj_mouse.y_to = obj_mouse.y_to_offset;
 		}
 		#endregion
 		
